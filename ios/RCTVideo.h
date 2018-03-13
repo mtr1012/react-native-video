@@ -4,6 +4,7 @@
 #import "UIView+FindUIViewController.h"
 #import "RCTVideoPlayerViewController.h"
 #import "RCTVideoPlayerViewControllerDelegate.h"
+#import <Photos/Photos.h>
 
 @class RCTEventDispatcher;
 
@@ -25,6 +26,7 @@
 @property (nonatomic, copy) RCTBubblingEventBlock onPlaybackStalled;
 @property (nonatomic, copy) RCTBubblingEventBlock onPlaybackResume;
 @property (nonatomic, copy) RCTBubblingEventBlock onPlaybackRateChange;
+@property (strong, nonatomic) UIActivityIndicatorView *indicator;
 
 - (instancetype)initWithEventDispatcher:(RCTEventDispatcher *)eventDispatcher NS_DESIGNATED_INITIALIZER;
 
