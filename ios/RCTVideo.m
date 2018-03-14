@@ -328,6 +328,12 @@ static NSString *const timedMetadata = @"timedMetadata";
         success([AVPlayerItem playerItemWithAsset:asset], identifier);
     }
     else if (isAsset) {
+        if ([uri.pathExtension isEqualToString:@"m4a"]) { //play audio
+            AVURLAsset *asset = [AVURLAsset URLAssetWithURL:url options:nil];
+            success([AVPlayerItem playerItemWithAsset:asset], identifier);
+            return;
+        }
+        
         if (showLoading) {
             //init temporary player
             success([AVPlayerItem playerItemWithURL:url], identifier);
