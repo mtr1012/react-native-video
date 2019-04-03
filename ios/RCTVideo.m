@@ -352,7 +352,7 @@ static NSString *const timedMetadata = @"timedMetadata";
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             PHVideoRequestOptions *option = [PHVideoRequestOptions new];
             option.networkAccessAllowed = YES;
-            option.version = PHVideoRequestOptionsVersionOriginal;
+            option.version = PHVideoRequestOptionsVersionCurrent;
             option.deliveryMode = PHVideoRequestOptionsDeliveryModeAutomatic;
             option.progressHandler = ^(double progress, NSError * _Nullable error, BOOL * _Nonnull stop, NSDictionary * _Nullable info) {
                 NSLog(@"%f",progress);
